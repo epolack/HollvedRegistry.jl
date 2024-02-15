@@ -1,0 +1,3 @@
+name = "ABINIT"
+uuid = "d8161b94-cc0e-11ee-1376-d73963e7741f"
+repo = "https://github.com/epolack/ABINIT.jl"

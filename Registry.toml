@@ -4,3 +4,4 @@ repo = "https://github.com/epolack/HollvedRegistry.jl"
 
 [packages]
 498d8bb8-48f6-584d-8f05-fccc9a211def = { name = "ABINIT_jll", path = "jll/A/ABINIT_jll" }
+d8161b94-cc0e-11ee-1376-d73963e7741f = { name = "ABINIT", path = "A/ABINIT" }
