@@ -1,0 +1,25 @@
+name: Registry tests
+on:
+  - push
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  consistency_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: julia-actions/setup-julia@latest
+        with:
+          version: '1.9'
+          arch: x64
+      - name: "Consistency"
+        env:
+          JULIA_PKG_UNPACK_REGISTRY: "true"
+        run: |
+          git config --global user.name "Github_Action"
+          git config --global user.email "github_action@example.test"
+          julia -e 'using Pkg; Pkg.add("RegistryCI")'
+          julia --color=yes -e 'using RegistryCI; RegistryCI.test(@__DIR__, registry_deps = ["General"])'
