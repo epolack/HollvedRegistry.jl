@@ -15,7 +15,6 @@ jobs:
         with:
           version: '1.9'
           arch: x64
-      - name: Cache artifac
       - name: "Consistency"
         env:
           JULIA_PKG_UNPACK_REGISTRY: "true"
